@@ -2,13 +2,14 @@ import React from 'react'
 import { PopupContainer, NftImage } from './styles'
 import MintingSection from './minting-section';
 import styled from 'styled-components';
+import logo from './logo.jpeg'
 
 const Popup = () => {
   return (<MainContainer>
    <PopupContainer >
     
     <MintingSection />
-    <NftImage src="images/mint.jpg" />
+    <NftImage src={logo} />
     </PopupContainer>
     </MainContainer>
   )
