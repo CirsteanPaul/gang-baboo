@@ -22,4 +22,4 @@ const MainContainer = styled.div`
   gap: 30px;
 `;
 
-export default Popup
+export default Popup;
