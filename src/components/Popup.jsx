@@ -1,39 +1,46 @@
-import React from 'react'
-import { PopupContainer, NftImage } from './styles'
-import MintingSection from './minting-section';
-import { useSelector } from 'react-redux';
-import styled from 'styled-components';
+import React from "react";
+import { PopupContainer, NftImage } from "./styles";
+import MintingSection from "./minting-section";
+import { useSelector } from "react-redux";
+import styled from "styled-components";
+import logo from "./logo.jpeg";
+
 const Popup = () => {
-  const data = useSelector(state => state.data);
-  return (<MainContainer>
-   <PopupContainer >
-    
-    <MintingSection />
-    <NftImage src="images/mint.jpg" />
-    </PopupContainer>
-    <FollowButton style={{ color: 'black'}} onClick={(e) => {
-      e.stopPropagation();
-      window.open('https://linktr.ee/gangstapes', '_blank');
-    }}>Linktree</FollowButton>
+  const data = useSelector((state) => state.data);
+  return (
+    <MainContainer>
+      <PopupContainer>
+        <MintingSection />
+        <NftImage src={logo} />
+      </PopupContainer>
+      <FollowButton
+        style={{ color: "black" }}
+        onClick={(e) => {
+          e.stopPropagation();
+          window.open("https://linktr.ee/gangstapes", "_blank");
+        }}
+      >
+        Linktree
+      </FollowButton>
     </MainContainer>
-  )
-}
+  );
+};
 const FollowButton = styled.button`
-  font-family: 'Merienda One',cursive;
-    text-align: center;
-    background-color: #f1f1f1;
-    border: 0;
-    border-radius: 8px;
-    outline: 0;
-    &:focus{
-      outline: 0;
-    }
-    &:hover{
-  cursor: pointer;
+  font-family: "Merienda One", cursive;
+  text-align: center;
+  background-color: #f1f1f1;
   border: 0;
+  border-radius: 8px;
   outline: 0;
-}
-    width: 100px;
+  &:focus {
+    outline: 0;
+  }
+  &:hover {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+  }
+  width: 100px;
 `;
 const MainContainer = styled.div`
   display: flex;
@@ -42,4 +49,4 @@ const MainContainer = styled.div`
   justify-content: center;
   gap: 30px;
 `;
-export default Popup
+export default Popup;

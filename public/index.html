@@ -1,120 +1,469 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8"/>
-      <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"/>
-      <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-      <meta charset="UTF-8"/>
-      <meta name="hat stir emotion. " content="7,6969 Lazy Baboons are ready to offer an new unique experience in the Web3 space with poker tournaments, staking, art and show the World of Web3 how it supposed to be done "/>
-      <meta name="keywords" content="Lazy Baboons NFT"/>
-      <meta name="author" content="Lazy Baboons"/>
-      <title>Lazy Baboons</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com"/>
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-      <link href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap" rel="stylesheet"/>
-      <link href="main.bundle.css" rel="stylesheet"/>
-      <link href="css/custom.css" rel="stylesheet"/>
-      <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga&amp;display=swap" rel="stylesheet"/>
-      <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon.ico"/>
-      <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet"/>
-      <link rel="manifest" href="favicon/site.webmanifest"/>
-      <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#777777"/>
-      <meta name="msapplication-TileColor" content="#999999"/>
-      <meta name="theme-color" content="#999999"/>
-   </head>
-   <style>.img-container{grid-template-columns:repeat(4,1fr)}@media screen and (max-width:865px){.img-container{grid-template-columns:repeat(2,200px)}}@media screen and (max-width:410px){.img-container{grid-template-columns:repeat(auto-fit,200px)}}</style>
-   <body style="background-color:#f5f5f0;position:relative">
-      <img style="width:250px;position:absolute;top:23%;left:0;z-index:-100;object-fit:cover" src="images/background-effect/icon-left.png" alt="weapon"/> 
-      <img style="width:250px;position:absolute;top:43%;right:-10px;z-index:-100;object-fit:cover" src="images/background-effect/icon-right.png" alt="weapon" class="absolute-images"/> 
-      <img style="width:250px;position:absolute;top:49%;left:0;z-index:-100;object-fit:cover" src="images/background-effect/img-left.png" alt="weapon" class="absolute-images"/> 
-      <img style="width:250px;position:absolute;top:18%;right:20px;z-index:-100;object-fit:cover" src="images/background-effect/img-right.png" alt="weapon" class="absolute-images"/> 
-      <img style="width:250px;position:absolute;top:59%;right:-10px;z-index:-100;object-fit:cover" src="images/background-effect/icon-right.png" alt="weapon" class="absolute-images"/> 
-      <img style="width:250px;position:absolute;top:76%;right:20px;z-index:-100;object-fit:cover" src="images/background-effect/img-right.png" alt="weapon" class="absolute-images"/>
-      <header class="fixed-top">
-         <div class="navbar">
-            <a class="navbar-brand" href="index.html"><img class="default" alt="We are represting Lazy Baboons all across the World" src="images/logo.png"/><img class="inverted" alt="" src="images/logo.png"/></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-               <span class="toggle-label" style="color: white;">
-                  <h1>☰</h1>
-               </span>
-               <span class="toggle-label-close">Close</span><span class="line"></span><span class="line"></span>
-            </button>
-         </div>
-         <ul id="nav">
-            <li class="nav-item active"><a class="nav-link" href="index.html">home</a></li>
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">discover</a>
-               <div class="dropdown-menu">
-                  <a class="dropdown-item" href="about.html">About us</a>
-            <li class="nav-item"><a class="nav-link" href="contact.html">contact</a></li></div></li>
-         </ul>
-      </header>
-      <section>
-         <main>
-            <div class=" d-flex align-items-center">
-                <div style="background-size: cover; width: 100vw; height: 100vh; background-position: center; background-attachment: fixed; background-image:url(images/back3.jpg);display:flex;justify-content:center;align-items:center;" class="bg o-10">
-                    <div style="padding-top: 10vh;" id="root"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" />
+    <meta
+      name="hat stir emotion. "
+      content="7,6969 Lazy Baboons are ready to offer an new unique experience in the Web3 space with poker tournaments, staking, art and show the World of Web3 how it supposed to be done "
+    />
+    <meta name="keywords" content="Lazy Baboons NFT" />
+    <meta name="author" content="Lazy Baboons" />
+    <title>Lazy Baboons</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda+One&display=swap"
+      rel="stylesheet"
+    />
+    <link href="main.bundle.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Giga&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon.ico"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bungee"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="favicon/safari-pinned-tab.svg"
+      color="#777777"
+    />
+    <meta name="msapplication-TileColor" content="#999999" />
+    <meta name="theme-color" content="#999999" />
+  </head>
+  <style>
+    .img-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media screen and (max-width: 865px) {
+      .img-container {
+        grid-template-columns: repeat(2, 200px);
+      }
+    }
+    @media screen and (max-width: 410px) {
+      .img-container {
+        grid-template-columns: repeat(auto-fit, 200px);
+      }
+    }
+  </style>
+  <body style="background-color: #f5f5f0; position: relative">
+    <img
+    style="width:250px;position:absolute;top:23%;left:0;z-index:-100;object-fit:cover"
+    src="images/background-effect/icon-left.png" alt="weapon"
+    class="absolute-images />
+    <img
+      style="
+        width: 250px;
+        position: absolute;
+        top: 43%;
+        right: -10px;
+        z-index: -100;
+        object-fit: cover;
+      "
+      src="images/background-effect/icon-right.png"
+      alt="weapon"
+      class="absolute-images"
+    />
+    <img
+      style="
+        width: 250px;
+        position: absolute;
+        top: 49%;
+        left: 0;
+        z-index: -100;
+        object-fit: cover;
+      "
+      src="images/background-effect/img-left.png"
+      alt="weapon"
+      class="absolute-images"
+    />
+    <img
+      style="
+        width: 250px;
+        position: absolute;
+        top: 18%;
+        right: 20px;
+        z-index: -100;
+        object-fit: cover;
+      "
+      src="images/background-effect/img-right.png"
+      alt="weapon"
+      class="absolute-images"
+    />
+    <img
+      style="
+        width: 250px;
+        position: absolute;
+        top: 59%;
+        right: -10px;
+        z-index: -100;
+        object-fit: cover;
+      "
+      src="images/background-effect/icon-right.png"
+      alt="weapon"
+      class="absolute-images"
+    />
+    <img
+      style="
+        width: 250px;
+        position: absolute;
+        top: 76%;
+        right: 20px;
+        z-index: -100;
+        object-fit: cover;
+      "
+      src="images/background-effect/img-right.png"
+      alt="weapon"
+      class="absolute-images"
+    />
+    <header class="fixed-top">
+      <div class="navbar">
+        <a class="navbar-brand" href="index.html"
+          ><img
+            class="default"
+            alt="We are represting Lazy Baboons all across the World"
+            src="images/logo.png" /><img
+            class="inverted"
+            alt=""
+            src="images/logo.png"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar"
+        >
+          <span class="toggle-label" style="color: white">
+            <h1>☰</h1>
+          </span>
+          <span class="toggle-label-close">Close</span><span class="line"></span
+          ><span class="line"></span>
+        </button>
+      </div>
+      <ul id="nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-toggle="dropdown"
+            >discover</a
+          >
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="about.html">About us</a>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">contact</a>
+            </li>
+          </div>
+        </li>
+      </ul>
+    </header>
+    <section>
+      <main>
+        <div class="d-flex align-items-center">
+          <div
+            style="
+              background-size: cover;
+              width: 100vw;
+              height: 100vh;
+              background-position: center;
+              background-attachment: fixed;
+              background-image: url(images/back3.jpg);
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            "
+            class="bg o-10"
+          >
+            <div style="padding-top: 10vh" id="root"></div>
+          </div>
+        </div>
+        <main>
+          <div style="margin-top: 20px" class="container-fluid">
+            <section>
+              <div class="container">
+                <div class="row justify-content-md-center">
+                  <h1 style="color: #000; font-size: 35px">
+                    <span class="d-block"
+                      >Why Lazy Baboons? And why are we Doxxed? </span
+                    ><span class="d-block"></span>
+                  </h1>
                 </div>
-            </div>
-            <main>
-               <div style="margin-top:20px" class="container-fluid">
-                  <section>
-                     <div class="container">
-                        <div class="row justify-content-md-center">
-                           <h1 style="color:#000;font-size:35px"><span class="d-block">Why Lazy Baboons? And why are we Doxxed? </span><span class="d-block"></span></h1>
-                        </div>
-                     </div>
-                  </section>
-               </div>
-            </main>
-         </main>
-      </section>
-      <div class="container py-3">
-         <div class="row justify-content-md-center">
-            <p></p>
-            <h6 style="color:#000;font-weight:500;text-align:center">We are a team of skilled and interesting people that have a lot to offer to the Web3 World with an aim to create the biggest Baboons community in the space. We intend to use this mint as a way to experiment and grow a community of Exclusive Open Minded Baboons but in the same time Lazy, to steward and create a community of art fans who want to see a small team learn the ropes of web3 and bring cool ideas to life with the feedback of our beloved Lazy Baboons</h6>
-            <p></p>
-            <div style="display:flex;flex-direction:column;flex:1;margin:30px 0;justify-content:center;align-items:center">
-               <h3 style="color:#000;font-family:Merienda One;margin-bottom:15px">Benefits</h3>
-               <div style="display:grid;width:100%;justify-content:center;gap:15px;padding:10px 20px;" class="benefits">
-                  <h6 style="color:#000;display:flex;align-items:center;justify-content:center;min-height:80px">Exclusive acces to events💡</h6>
-                  <h6 style="color:#000;display:flex;align-items:center;justify-content:center;min-height:80px">💡Holders monthly/weekly/daily poker tournaments</h6>
-                  <h6 style="color:#000;display:flex;align-items:center;justify-content:center;min-height:80px">Staking with rewards in ETH💡</h6>
-                  <h6 style="color:#000;display:flex;align-items:center;justify-content:center;min-height:80px">💡Merch</h6>
-                  <h6 style="color:#000;display:flex;align-items:center;justify-content:center;min-height:80px">Partner with Top Streamers & Influencers World Wide💡 to expand our network</h6>
-                  <h6 style="color:#000;display:flex;align-items:center;justify-content:center;min-height:80px">💡5% of the Royalties goes into Community Wallet (upstreamapp.com will be the host for our DAO)</h6>
-                  <h6 style="color:#000;display:flex;align-items:center;justify-content:center;min-height:80px">💡Prize Pools 2,000$ Weekly 8,000$ Monthly FREE for Lazy Baboons Holders</h6>
-                  <h6 style="color:#000;display:flex;align-items:center;justify-content:center;min-height:80px">💡Poker Platform Revenue Share The platform will take 1-6 months for full development and optimization, but once is done Lazy Baboons holder will have a % of the revenue (depending how many LB they have in hold)</h6>
-               </div>
-            </div>
-            <img class="img-fluid vw-100" style="border-radius:40px;margin:15px 0" alt="Lazy Baboons NFT" src="images/back5.jpg"/> <img class="img-fluid vw-100" style="border-radius:40px;margin:15px 0" alt="Lazy Baboons NFT" src="images/back6.jpg"/>
-         </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </main>
+    </section>
+    <div class="container py-3">
+      <div class="row justify-content-md-center">
+        <p></p>
+        <h6 style="color: #000; font-weight: 500; text-align: center">
+          We are a team of skilled and interesting people that have a lot to
+          offer to the Web3 World with an aim to create the biggest Baboons
+          community in the space. We intend to use this mint as a way to
+          experiment and grow a community of Exclusive Open Minded Baboons but
+          in the same time Lazy, to steward and create a community of art fans
+          who want to see a small team learn the ropes of web3 and bring cool
+          ideas to life with the feedback of our beloved Lazy Baboons
+        </h6>
+        <p></p>
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin: 30px 0;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <h3
+            style="color: #000; font-family: Merienda One; margin-bottom: 15px"
+          >
+            Benefits
+          </h3>
+          <div
+            style="
+              display: grid;
+              width: 100%;
+              justify-content: center;
+              gap: 30px;
+              margin-top: 30px;
+              text-align: center;
+              grid-template-columns: repeat(2, 1fr);
+              grid-template-rows: repeat(2, 1fr);
+            "
+            class="benefits"
+          >
+            <h6
+              style="
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-align: center;
+              "
+            >
+              Exclusive acces to events💡
+            </h6>
+            <h6
+              style="
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-align: center;
+              "
+            >
+              💡Holders monthly/weekly/daily poker tournaments
+            </h6>
+            <h6
+              style="
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-align: center;
+              "
+            >
+              Staking with rewards in ETH💡
+            </h6>
+            <h6
+              style="
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-align: center;
+              "
+            >
+              💡Merch
+            </h6>
+            <h6
+              style="
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-align: center;
+              "
+            >
+              Partner with Top Streamers & Influencers World Wide💡 to expand
+              our network
+            </h6>
+            <h6
+              style="
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-align: center;
+              "
+            >
+              💡5% of the Royalties goes into Community Wallet (upstreamapp.com
+              will be the host for our DAO)
+            </h6>
+            <h6
+              style="
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                text-align: center;
+              "
+            >
+              💡Prize Pools 2,000$ Weekly 8,000$ Monthly FREE for Lazy Baboons
+              Holders
+            </h6>
+            <h6
+              style="
+                color: #000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+              class="last-grid-text"
+            >
+              💡Poker Platform Revenue Share The platform will take 1-6 months
+              for full development and optimization, but once is done Lazy
+              Baboons holder will have a % of the revenue (depending how many LB
+              they have in hold)
+            </h6>
+          </div>
+        </div>
+        <img
+          class="img-fluid vw-100"
+          style="border-radius: 40px; margin: 15px 0"
+          alt="Lazy Baboons NFT"
+          src="images/back5.jpg"
+        />
+        <img
+          class="img-fluid vw-100"
+          style="border-radius: 40px; margin: 15px 0"
+          alt="Lazy Baboons NFT"
+          src="images/back6.jpg"
+        />
       </div>
-      <div class="container">
-         <div class="row justify-content-md-center" style="justify-content:center">
-            <h1 style="color:#000;font-size:25px;padding:0 3rem;margin:30px 0"><span class="d-block" style="text-align:center;margin-bottom:20px">Lazy Baboons is a story and community-driven, hand-drawn NFT collection and a Lazy Brand supplied with smart Baboons that has been summoned on the Ethereum blockchain. </span><span class="d-block"></span></h1>
-            <img class="img-fluid vw-100 absolute-images" style="border-radius:15px" alt="" src="images/back4.jpg" />
-         </div>
+    </div>
+    <div class="container">
+      <div
+        class="row justify-content-md-center"
+        style="justify-content: center"
+      >
+        <h1
+          style="color: #000; font-size: 25px; padding: 0 3rem; margin: 30px 0"
+        >
+          <span class="d-block" style="text-align: center; margin-bottom: 20px"
+            >Lazy Baboons is a story and community-driven, hand-drawn NFT
+            collection and a Lazy Brand supplied with smart Baboons that has
+            been summoned on the Ethereum blockchain. </span
+          ><span class="d-block"></span>
+        </h1>
+        <img
+          class="img-fluid vw-100 absolute-images"
+          style="border-radius: 15px"
+          alt=""
+          src="images/back4.jpg"
+        />
       </div>
-      <div class="container py-6">
-         <div class="row justify-content-md-center" style="justify-content:center">
-            <h1 style="font-size:30px;color:#000;margin-bottom:25px">It's Simple!</h1>
-            <h4 style="font-size:16px;color:#000;margin-bottom:35px;padding:0 3rem">Everything is achievable. Join us on our journey to the top and become a part of our Lazy Jungle and together we will become the strongest NFT community they have ever seen!</h4>
-         </div>
+    </div>
+    <div class="container py-6">
+      <div
+        class="row justify-content-md-center"
+        style="justify-content: center"
+      >
+        <h1 style="font-size: 30px; color: #000; margin-bottom: 25px">
+          It's Simple!
+        </h1>
+        <h4
+          style="
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 35px;
+            padding: 0 3rem;
+            text-align: center;
+          "
+        >
+          Everything is achievable. Join us on our journey to the top and become
+          a part of our Lazy Jungle and together we will become the strongest
+          NFT community they have ever seen!
+        </h4>
       </div>
-      <footer>
-         <div class="container-fluid p-3">
-            <div class="d-flex justify-content-between align-items-center">
-               <div style="width:100%;display:flex;justify-content:center">
-                  <h1 style="width:50%;color:#181c2a;font-family:Bungee;font-size:30px;text-align:center">We are here to take over</h1>
-               </div>
-            </div>
-            <div style="color:#181c2a;font-family:Bungee;font-size:20px;margin-top:30px;text-align:center" class="copy">2022 &copy; Designed by Mafia Room. All rights reserved Lazy Baboons</div>
-            <a style="color:#181c2a;font-family:Bungee;font-size:20px;margin-top:30px;text-align:center" class="to-top" href="#">
-               <svg class="bi" width="32" height="32" fill="currentColor">
-                  <use xlink:href="images/bootstrap-icons.svg#chevron-compact-up"></use>
-               </svg>
-            </a>
-         </div>
-      </footer>
-      <script src="main.bundle.js"></script>
+    </div>
+    <footer>
+      <div class="container-fluid p-3">
+        <div class="d-flex justify-content-between align-items-center">
+          <div style="width: 100%; display: flex; justify-content: center">
+            <h1
+              style="
+                width: 50%;
+                color: #181c2a;
+                font-family: Bungee;
+                font-size: 30px;
+                text-align: center;
+              "
+            >
+              We are here to take over
+            </h1>
+          </div>
+        </div>
+        <div
+          style="
+            color: #181c2a;
+            font-family: Bungee;
+            font-size: 20px;
+            margin-top: 30px;
+            text-align: center;
+          "
+          class="copy"
+        >
+          2022 &copy; Designed by Mafia Room. All rights reserved Lazy Baboons
+        </div>
+        <a
+          style="
+            color: #181c2a;
+            font-family: Bungee;
+            font-size: 20px;
+            margin-top: 30px;
+            text-align: center;
+          "
+          class="to-top"
+          href="#"
+        >
+          <svg class="bi" width="32" height="32" fill="currentColor">
+            <use
+              xlink:href="images/bootstrap-icons.svg#chevron-compact-up"
+            ></use>
+          </svg>
+        </a>
+      </div>
+    </footer>
+    <script src="main.bundle.js"></script>
+  </body>
+</html>
