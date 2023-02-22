@@ -1,9 +1,9 @@
 import { ethers } from 'ethers';
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchData } from '../../redux/data/dataActions';
 import ReactLoading from 'react-loading';
-import { MintingContainer, FreeMintSection,
+import { MintingContainer,
     HowMuchLeftToMint,HowManyCanIMint, CostOfEther
 , ValueSection, MintingSection, ChangeButton
 ,MintButtonContainer, MintButton } from './styles';
@@ -15,13 +15,9 @@ const MintingInfo = () => {
     const isMinting = useSelector(state => state.app.isMinting);
     const blockchain = useSelector(state => state.blockchain);
     const data = useSelector(state => state.data);
+
     const handleIncrement = () =>{
-        if(data.whitelistStatus) 
-        {
-            if(mintAmount < data.whitelistMaxPerWallet - data.alreadyMinted)
-           dispatch(setMintingAmountAction(mintAmount + 1));
-        }
-        else if(mintAmount <data.maxPerWallet -  data.alreadyMinted - 1){
+        if(mintAmount < data.maxPerWallet -  data.alreadyMinted - 1){
            dispatch(setMintingAmountAction(mintAmount + 1));
         }
     }
@@ -58,48 +54,19 @@ const MintingInfo = () => {
             dispatch(setIsMintingtAction(false));
         }
       };
-    const freeMintMessageStatus = useMemo(() =>{
-        if(data.alreadyWhitelistMinted === 0)
-            return "You have a nft for free mint";
-        else
-            return null;
-    },[data.alreadyMinted])
     const cost = useMemo(() =>{
-        if(data.whitelistStatus) {
-            if(data.alreadyWhitelistMinted) {
-                return mintAmount * data.whitelistCost;
-            }
-            else {
-                return (mintAmount - 1) * data.whitelistCost;
-            }
-        } else{
-            return mintAmount * data.cost;
-        }
+        console.log(data.cost, data.mintAmount);
+            if(data.alreadyMinted !== 0) 
+                return mintAmount * data.cost;
+
+            return (mintAmount - 1) * data.cost;
     },[data.alreadyMinted, data.cost, mintAmount])
     useEffect(() =>{
         getData();
     },[])
     if(data.loading)
         return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1}}><ReactLoading type='balls' height={70} width={80} /></div>;
-    if(data.whitelistStatus) {
-        return  (
-            <MintingContainer>
-                <FreeMintSection>{freeMintMessageStatus}</FreeMintSection>
-                <HowMuchLeftToMint>{`${data.totalSupply}/${data.maxSupply}`}</HowMuchLeftToMint>
-                <HowManyCanIMint>{`You can mint ${data.whitelistMaxPerWallet - data.alreadyWhitelistMinted} more NFTs` }</HowManyCanIMint>
-                <MintingSection>
-                    <ChangeButton onClick={(e) => {e.stopPropagation(); handleDecrement()}}> -</ChangeButton>
-                    <ValueSection>{mintAmount}</ValueSection>
-                    <ChangeButton onClick={(e) =>{e.stopPropagation(); handleIncrement()}}> +</ChangeButton>
-                </MintingSection>
-                <MintButtonContainer>
-                <MintButton disabled={isMinting} onClick={(e) => {e.stopPropagation(); claimNFTs()}}>Mint</MintButton>
-                <CostOfEther>{`${cost} ETH`}</CostOfEther>
-                </MintButtonContainer>
-        
-            </MintingContainer>
-          )
-    }
+
   return (
     <MintingContainer>
         <HowMuchLeftToMint>{`${data.totalSupply}/${data.maxSupply}`}</HowMuchLeftToMint>
