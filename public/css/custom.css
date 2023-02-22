@@ -1,0 +1,8 @@
+/* Custom.css < Do your own thing! */
+
+body {
+    background: transparent;
+
+  background-image: url("/images/paper.gif"), url("paper.gif");
+
+}
