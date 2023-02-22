@@ -1,4 +1,4 @@
-export const networkId = 1;
+export const networkId = 80001;
 export const networkParams = {
     "0x63564c40": {
       chainId: "0x63564c40",

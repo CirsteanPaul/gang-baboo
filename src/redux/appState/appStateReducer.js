@@ -1,6 +1,6 @@
 const initialState = {
     isMinting: false,
-    mintingAmount: 0,
+    mintingAmount: 1,
   };
   
   const dataReducer = (state = initialState, action) => {

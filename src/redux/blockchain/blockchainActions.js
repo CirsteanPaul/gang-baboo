@@ -7,7 +7,7 @@ import { networkParams } from "../../we3modal/networks";
 import { addMetamaskIfMissing, providerOptions } from "../../we3modal/providerOptions";
 import { toHex } from "../../we3modal/utils";
 import Web3Modal from "web3modal";
-import {mainContract,mainContractAbi, configNetWorkID} from "../../absolutePath"
+import {mainContract,mainContractAbi} from "../../absolutePath"
 import { ethers } from "ethers";
 import { fetchData } from "../data/dataActions";
 

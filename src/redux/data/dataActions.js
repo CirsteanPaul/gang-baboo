@@ -1,7 +1,6 @@
-// log
 import store from "../store";
 import { ethers } from "ethers";
-import { BigNumber } from "ethers";
+
 const fetchDataRequest = () => {
   return {
     type: "CHECK_DATA_REQUEST",
@@ -32,40 +31,29 @@ export const fetchData = (account) => {
         .blockchain.smartContract.totalSupply();
 
         let cost = await store.getState()
-        .blockchain.smartContract.publicCost();
+        .blockchain.smartContract.publicPrice();
 
         let alreadyMinted = await store.getState()
         .blockchain.smartContract.publicClaimed(account._address);
 
-        let alreadyWhitelistMinted = await store.getState()
-        .blockchain.smartContract.publicClaimed(account._address);
-
         let maxPerWallet = await store.getState()
-        .blockchain.smartContract.maxPublic();
+        .blockchain.smartContract.publicMintPerTx();
 
         let maxSupply = await store.getState()
         .blockchain.smartContract.maxSupply();
 
-        let whitelistCost = await store.getState().blockchain.smartContract.whitelistCost();
-        let whitelistMaxPerWallet = await store.getState().blockchain.smartContract.maxWhitelist();
-        let whitelistStatus = await store.getState().blockchain.smartContract.whitelistStatus();
 
         totalSupply = totalSupply.toNumber();
         alreadyMinted = alreadyMinted.toNumber();
-        alreadyWhitelistMinted = alreadyWhitelistMinted.toNumber();
         maxPerWallet = maxPerWallet.toNumber();
         maxSupply = maxSupply.toNumber();
+        console.log(cost);
         cost = ethers.utils.formatEther(cost);
-        whitelistMaxPerWallet = whitelistMaxPerWallet.toNumber();
-        whitelistCost = ethers.utils.formatEther(whitelistCost);
+        console.log(cost);
         dispatch(
         fetchDataSuccess({
           totalSupply,
           cost,
-          alreadyWhitelistMinted,
-          whitelistCost,
-          whitelistMaxPerWallet,
-          whitelistStatus,
           alreadyMinted,
           maxPerWallet,
           maxSupply

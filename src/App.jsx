@@ -1,19 +1,14 @@
-import { ethers } from "ethers";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Web3Modal from "web3modal";
-import { toHex } from "./we3modal/utils";
-import { networkId } from "./we3modal/networks";
 import Popup from "./components";
-import { networkParams } from "./we3modal/networks";
 import { addMetamaskIfMissing, providerOptions } from "./we3modal/providerOptions";
 import {useDispatch, useSelector} from "react-redux";
-import { connect, initiateWeb3, updateAccountRequest } from "./redux/blockchain/blockchainActions";
+import { updateAccountRequest } from "./redux/blockchain/blockchainActions";
 import styled from "styled-components";
 function App() {
   const dispatch = useDispatch();
   const provider = useSelector(state => state.blockchain.provider);
   const web3Modal = useSelector(state => state.blockchain.web3);
-  const account = useSelector(state => state.blockchain.account);
   useEffect(() => {
     addMetamaskIfMissing()
     localStorage.clear()
@@ -21,10 +16,6 @@ function App() {
       cacheProvider: false,
       providerOptions // required
     });
-    // dispatch(initiateWeb3({web3: web3Modal}));
-    // if (web3Modal?.cachedProvider) {
-    //   dispatch(connect());
-    // }
   }, []);
 
   const disconnect = async () => {
@@ -33,17 +24,14 @@ function App() {
   useEffect(() => {
     if (provider?.on) {
       const handleAccountsChanged = (accounts) => {
-        console.log("accountsChanged", accounts);
         dispatch(updateAccountRequest(accounts[0]));
       };
 
       const handleChainChanged = (_hexChainId) => {
-        console.log("disconnect" );
         disconnect();
       };
 
       const handleDisconnect = () => {
-        console.log("disconnect");
         disconnect();
       };
 
@@ -68,11 +56,10 @@ function App() {
 }
 const MainContainer = styled.div`
   padding: 20px;
-
-    min-height: 300px;
-    width: 100vw;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  min-height: 300px;
+  width: 100vw;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 `;
 export default App;
