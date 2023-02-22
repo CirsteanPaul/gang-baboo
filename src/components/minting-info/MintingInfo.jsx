@@ -15,16 +15,16 @@ const MintingInfo = () => {
     const isMinting = useSelector(state => state.app.isMinting);
     const blockchain = useSelector(state => state.blockchain);
     const data = useSelector(state => state.data);
-
+    console.log(data);
     const handleIncrement = () =>{
         if(mintAmount < data.maxPerWallet -  data.alreadyMinted - 1){
-           dispatch(setMintingAmountAction(mintAmount + 1));
+           dispatch(setMintingAmountAction({mintingAmount: mintAmount + 1 }));
         }
     }
     const handleDecrement = () =>{
         if(mintAmount === 1)
         return;
-        dispatch(setMintingAmountAction(mintAmount - 1));
+        dispatch(setMintingAmountAction({ mintingAmount: mintAmount - 1 }));
     }
     const getData = () =>{
         dispatch(fetchData(blockchain.account));
@@ -40,7 +40,7 @@ const MintingInfo = () => {
         let totalGasLimit = String(gasLimit * mintAmount);
         console.log("Cost: ", totalCostWei);
         console.log("Gas limit: ", totalGasLimit);
-        dispatch(setIsMintingtAction(true));
+        dispatch(setIsMintingtAction({ isMinting: true}));
         try{
         const tx = await  blockchain.smartContract.mint(mintAmount, {value: totalCostWei});
         await tx.wait()
@@ -51,15 +51,15 @@ const MintingInfo = () => {
             alert("Check your balance, or the contract is paused right now");
        }
         finally{
-            dispatch(setIsMintingtAction(false));
+            dispatch(setIsMintingtAction({ isMinting: false }));
         }
       };
     const cost = useMemo(() =>{
-        console.log(data.cost, data.mintAmount);
+        console.log(data.cost, mintAmount);
             if(data.alreadyMinted !== 0) 
-                return mintAmount * data.cost;
+                return (mintAmount * Number(data.cost)).toString().substring(0, 6);
 
-            return (mintAmount - 1) * data.cost;
+            return ((mintAmount - 1) * Number(data.cost)).toString().substring(0, 6);
     },[data.alreadyMinted, data.cost, mintAmount])
     useEffect(() =>{
         getData();
